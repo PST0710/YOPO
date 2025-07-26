@@ -220,3 +220,9 @@ If you find this work useful or interesting, please kindly give us a star ⭐; I
   publisher={IEEE}
 }
 ```
+
+## 快速启动yopo仿真脚本
+```
+cd ~/pst_codes/YOPO/   
+./run_yopo.sh  
+```
