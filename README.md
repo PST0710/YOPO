@@ -75,6 +75,10 @@ conda deactivate
 cd Simulator
 catkin_make
 ```
+注意：编译Simulator模块时，需要在CMakelist文件中添加下面代码强制链接器包含必需库pthread，否则报错：
+```
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
+```
 
 ## Test the Policy
 

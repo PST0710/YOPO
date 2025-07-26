@@ -19,6 +19,9 @@ find_package(OpenMP)
 find_package(yaml-cpp REQUIRED)
 message(WARNING "OpenCV_VERSION: ${OpenCV_VERSION}")
 
+# pthread
+find_package(Threads REQUIRED)
+
 # CUDA
 find_package(CUDA REQUIRED)
 # Query the GPU architecture
@@ -32,6 +35,9 @@ if("${ARCH_FLAGS}" STREQUAL "")
 endif()
 message(WARNING "CUDA Architecture: ${ARCH_FLAGS}")
 set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} ${ARCH_FLAGS}")
+
+# 在 CMakeLists.txt 中添加 强制链接器包含所有必需库 pthread
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
 
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_CXX_FLAGS "-O3")

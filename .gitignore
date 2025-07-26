@@ -14,3 +14,7 @@ dataset/
 yopo_sim/
 
 !YOPO/saved/YOPO_1/
+
+*.pyc
+
+.catkin_workspace
